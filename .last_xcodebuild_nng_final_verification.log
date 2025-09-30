@@ -1,0 +1,11 @@
+Building for production...
+[0/3] Write sources
+[1/3] Write swift-version--58304C5D6DBC2206.txt
+[3/4] Compiling EmulatorUI HighlightGenerationView.swift
+/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/IncomeTrackerView.swift:484:50: error: type 'DesignSystem.Spacing' has no member 'xs0'
+ 482 |                 .foregroundColor(.white)
+ 483 | 
+ 484 |             HStack(spacing: DesignSystem.Spacing.xs0) {
+     |                                                  `- error: type 'DesignSystem.Spacing' has no member 'xs0'
+ 485 |                 VStack(alignment: .leading, spacing: DesignSystem.Spacing.sm) {
+ 486 |                     Text("Gross Income")

@@ -1,0 +1,6 @@
+#!/bin/sh
+set -e
+echo "🔎 Running preflight before push..."
+echo "📋 Final verification of Universal Emulator (Content Creator Toolkit)..."
+scripts/preflight.sh
+echo "✅ Pre-push checks passed - safe to push!"

@@ -1,0 +1,13 @@
+{
+  "": {
+    "dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/Collections.build/Collections.d",
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/Collections.build/Collections.o",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/Collections.build/master.swiftdeps"
+  },
+  "/Users/lukekist/NintendoEmulator/.build/checkouts/swift-collections/Sources/Collections/Collections.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/Collections.build/Collections.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/Collections.build/Collections~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/Collections.build/Collections.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/Collections.build/Collections.dia"
+  }
+}

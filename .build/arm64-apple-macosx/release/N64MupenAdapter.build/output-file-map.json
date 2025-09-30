@@ -1,0 +1,13 @@
+{
+  "": {
+    "dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64MupenAdapter.build/N64MupenAdapter.d",
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64MupenAdapter.build/N64MupenAdapter.o",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64MupenAdapter.build/master.swiftdeps"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/N64MupenAdapter/N64MupenAdapter.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64MupenAdapter.build/N64MupenAdapter.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64MupenAdapter.build/N64MupenAdapter~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64MupenAdapter.build/N64MupenAdapter.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64MupenAdapter.build/N64MupenAdapter.dia"
+  }
+}

@@ -1,0 +1,3 @@
+module CoreInterface {
+    header "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/CoreInterface.build/include/CoreInterface-Swift.h"
+}

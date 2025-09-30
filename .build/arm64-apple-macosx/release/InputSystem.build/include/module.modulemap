@@ -1,0 +1,3 @@
+module InputSystem {
+    header "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/InputSystem.build/include/InputSystem-Swift.h"
+}

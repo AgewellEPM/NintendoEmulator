@@ -1,0 +1,3 @@
+module WiiCore {
+    header "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/WiiCore.build/include/WiiCore-Swift.h"
+}

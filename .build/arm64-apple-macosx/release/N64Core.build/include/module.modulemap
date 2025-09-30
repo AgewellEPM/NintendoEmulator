@@ -1,0 +1,3 @@
+module N64Core {
+    header "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64Core.build/include/N64Core-Swift.h"
+}

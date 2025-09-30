@@ -1,0 +1,187 @@
+{
+  "": {
+    "dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/EmulatorKit.d",
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/EmulatorKit.o",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/master.swiftdeps"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/AI/HighlightGenerationService.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/HighlightGenerationService.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/HighlightGenerationService~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/HighlightGenerationService.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/HighlightGenerationService.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/Authentication/AuthAPIService.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/AuthAPIService.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/AuthAPIService~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/AuthAPIService.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/AuthAPIService.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/Authentication/AuthenticationManager.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/AuthenticationManager.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/AuthenticationManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/AuthenticationManager.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/AuthenticationManager.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/Authentication/OAuthManager.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/OAuthManager.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/OAuthManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/OAuthManager.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/OAuthManager.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/Authentication/SecureTokenStorage.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/SecureTokenStorage.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/SecureTokenStorage~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/SecureTokenStorage.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/SecureTokenStorage.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/Authentication/UserProfileManager.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/UserProfileManager.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/UserProfileManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/UserProfileManager.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/UserProfileManager.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/CoreRegistry.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/CoreRegistry.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/CoreRegistry~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/CoreRegistry.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/CoreRegistry.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/DebugTools/CPUDebugger.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/CPUDebugger.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/CPUDebugger~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/CPUDebugger.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/CPUDebugger.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/DebugTools/MemoryViewer.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/MemoryViewer.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/MemoryViewer~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/MemoryViewer.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/MemoryViewer.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/DebugTools/PerformanceProfiler.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/PerformanceProfiler.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/PerformanceProfiler~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/PerformanceProfiler.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/PerformanceProfiler.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/EmulatorManager.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/EmulatorManager.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/EmulatorManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/EmulatorManager.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/EmulatorManager.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/EnhancedROMLoader.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/EnhancedROMLoader.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/EnhancedROMLoader~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/EnhancedROMLoader.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/EnhancedROMLoader.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/ExecutionController.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/ExecutionController.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/ExecutionController~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/ExecutionController.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/ExecutionController.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/ExternalAppControl.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/ExternalAppControl.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/ExternalAppControl~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/ExternalAppControl.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/ExternalAppControl.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/Input/GameControllerManager.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/GameControllerManager.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/GameControllerManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/GameControllerManager.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/GameControllerManager.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/KeychainManager.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/KeychainManager.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/KeychainManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/KeychainManager.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/KeychainManager.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/Overlay/StreamOverlayManager.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/StreamOverlayManager.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/StreamOverlayManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/StreamOverlayManager.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/StreamOverlayManager.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/PerformanceMonitor.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/PerformanceMonitor.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/PerformanceMonitor~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/PerformanceMonitor.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/PerformanceMonitor.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/ROMAnalyzer.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/ROMAnalyzer.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/ROMAnalyzer~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/ROMAnalyzer.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/ROMAnalyzer.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/ROMManager.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/ROMManager.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/ROMManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/ROMManager.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/ROMManager.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/SecureOAuthManager.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/SecureOAuthManager.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/SecureOAuthManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/SecureOAuthManager.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/SecureOAuthManager.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/SimplifiedLibretroCoreAdapter.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/SimplifiedLibretroCoreAdapter.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/SimplifiedLibretroCoreAdapter~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/SimplifiedLibretroCoreAdapter.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/SimplifiedLibretroCoreAdapter.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/StateManager.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/StateManager.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/StateManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/StateManager.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/StateManager.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/Streaming/GhostBridgeHelper.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/GhostBridgeHelper.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/GhostBridgeHelper~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/GhostBridgeHelper.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/GhostBridgeHelper.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/Streaming/StreamingManager.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/StreamingManager.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/StreamingManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/StreamingManager.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/StreamingManager.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/Streaming/TwitchAPIService.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/TwitchAPIService.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/TwitchAPIService~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/TwitchAPIService.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/TwitchAPIService.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/Streaming/VideoRecorder.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/VideoRecorder.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/VideoRecorder~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/VideoRecorder.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/VideoRecorder.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/Streaming/YouTubeAPIService.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/YouTubeAPIService.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/YouTubeAPIService~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/YouTubeAPIService.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/YouTubeAPIService.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/TestROMGenerator.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/TestROMGenerator.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/TestROMGenerator~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/TestROMGenerator.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/TestROMGenerator.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/EmulatorKit/UniversalEmulatorManager.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/UniversalEmulatorManager.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/UniversalEmulatorManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/UniversalEmulatorManager.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/UniversalEmulatorManager.dia"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "": {
+    "dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/GameCubeCore.build/GameCubeCore.d",
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/GameCubeCore.build/GameCubeCore.o",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/GameCubeCore.build/master.swiftdeps"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/GameCubeCore/GameCubeCore.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/GameCubeCore.build/GameCubeCore.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/GameCubeCore.build/GameCubeCore~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/GameCubeCore.build/GameCubeCore.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/GameCubeCore.build/GameCubeCore.dia"
+  }
+}

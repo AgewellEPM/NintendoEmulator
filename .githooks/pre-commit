@@ -1,0 +1,6 @@
+#!/bin/sh
+set -e
+echo "🔎 Running preflight before commit..."
+echo "📋 Checking Universal Emulator (Content Creator Toolkit)..."
+scripts/preflight.sh
+echo "✅ Pre-commit checks passed - ready to commit!"

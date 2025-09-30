@@ -1,0 +1,25 @@
+{
+  "": {
+    "dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/RenderingEngine.build/RenderingEngine.d",
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/RenderingEngine.build/RenderingEngine.o",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/RenderingEngine.build/master.swiftdeps"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/RenderingEngine/GraphicsEnhancer.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/RenderingEngine.build/GraphicsEnhancer.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/RenderingEngine.build/GraphicsEnhancer~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/RenderingEngine.build/GraphicsEnhancer.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/RenderingEngine.build/GraphicsEnhancer.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/RenderingEngine/MetalRenderer.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/RenderingEngine.build/MetalRenderer.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/RenderingEngine.build/MetalRenderer~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/RenderingEngine.build/MetalRenderer.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/RenderingEngine.build/MetalRenderer.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/RenderingEngine.build/DerivedSources/resource_bundle_accessor.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/RenderingEngine.build/resource_bundle_accessor.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/RenderingEngine.build/resource_bundle_accessor~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/RenderingEngine.build/resource_bundle_accessor.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/RenderingEngine.build/resource_bundle_accessor.dia"
+  }
+}
