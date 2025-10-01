@@ -1,0 +1,8 @@
+module CMupen64Plus {
+    header "m64p_types.h"
+    header "m64p_frontend.h"
+    header "m64p_config.h"
+    header "m64p_plugin.h"
+    header "m64p_vidext.h"
+    export *
+}

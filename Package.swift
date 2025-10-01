@@ -75,6 +75,16 @@ let package = Package(
             ]
         ),
 
+        // CMupen64Plus - C headers for mupen64plus API
+        .target(
+            name: "CMupen64Plus",
+            path: "Sources/CMupen64Plus",
+            publicHeadersPath: "include",
+            cSettings: [
+                .headerSearchPath("include")
+            ]
+        ),
+
         .target(
             name: "N64MupenAdapter",
             dependencies: [
@@ -82,12 +92,19 @@ let package = Package(
                 "EmulatorKit",
                 "RenderingEngine",
                 "N64VidExtBridge",
+                "CMupen64Plus",
+                "InputSystem",
                 .product(name: "Logging", package: "swift-log"),
             ],
             path: "Sources/N64MupenAdapter",
             swiftSettings: [
                 .unsafeFlags(["-warnings-as-errors"], .when(configuration: .debug)),
                 .unsafeFlags(["-warnings-as-errors"], .when(configuration: .release))
+            ],
+            linkerSettings: [
+                .unsafeFlags(["-L", "Frameworks"]),
+                .linkedLibrary("mupen64plus"),
+                .linkedFramework("OpenGL")
             ]
         ),
 
