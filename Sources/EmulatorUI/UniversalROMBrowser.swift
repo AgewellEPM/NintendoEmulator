@@ -11,6 +11,7 @@ public struct UniversalROMBrowser: View {
     @State private var selectedGame: ROMMetadata?
     @State private var showingImporter = false
     @State private var isDraggingOver = false
+    @State private var showingSettings = false
 
     public init() {}
 
@@ -148,10 +149,34 @@ public struct UniversalROMBrowser: View {
 
                     Spacer()
 
-                    Button(action: {}) {
+                    Button(action: { showingSettings.toggle() }) {
                         Image(systemName: "slider.horizontal.3")
                     }
                     .buttonStyle(BorderlessButtonStyle())
+                    .popover(isPresented: $showingSettings) {
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text("ROM Library Settings")
+                                .font(.headline)
+
+                            Divider()
+
+                            Button(action: {
+                                Task {
+                                    await romManager.loadROMs()
+                                }
+                            }) {
+                                Label("Refresh Library", systemImage: "arrow.clockwise")
+                            }
+
+                            Button(action: {
+                                NSWorkspace.shared.open(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("Nintendo Emulator/ROMs"))
+                            }) {
+                                Label("Open ROMs Folder", systemImage: "folder")
+                            }
+                        }
+                        .padding()
+                        .frame(width: 250)
+                    }
                 }
                 .padding(10)
                 .background(Color(NSColor.controlBackgroundColor))
@@ -298,6 +323,8 @@ struct GameDetailView: View {
     @StateObject private var fetcher = GameMetadataFetcher()
     @State private var metadata: GameMetadataFetcher.GameMetadata?
     @StateObject private var storageManager = ImageStorageManager.shared
+    @State private var isFavorite = false
+    @State private var showingOptions = false
 
     var body: some View {
         ScrollView {
@@ -360,17 +387,54 @@ struct GameDetailView: View {
                             .buttonStyle(.borderedProminent)
                             .controlSize(.large)
 
-                            Button(action: {}) {
-                                Image(systemName: "heart")
+                            Button(action: {
+                                isFavorite.toggle()
+                                // Save favorite status
+                                UserDefaults.standard.set(isFavorite, forKey: "favorite_\(game.title)")
+                            }) {
+                                Image(systemName: isFavorite ? "heart.fill" : "heart")
+                                    .foregroundColor(isFavorite ? .red : .primary)
                             }
                             .buttonStyle(.bordered)
                             .controlSize(.large)
 
-                            Button(action: {}) {
+                            Button(action: { showingOptions.toggle() }) {
                                 Image(systemName: "ellipsis")
                             }
                             .buttonStyle(.bordered)
                             .controlSize(.large)
+                            .popover(isPresented: $showingOptions) {
+                                VStack(alignment: .leading, spacing: 8) {
+                                    Button(action: {
+                                        NSWorkspace.shared.open(game.path.deletingLastPathComponent())
+                                        showingOptions = false
+                                    }) {
+                                        Label("Show in Finder", systemImage: "folder")
+                                    }
+
+                                    Button(action: {
+                                        NSPasteboard.general.clearContents()
+                                        NSPasteboard.general.setString(game.title, forType: .string)
+                                        showingOptions = false
+                                    }) {
+                                        Label("Copy Title", systemImage: "doc.on.doc")
+                                    }
+
+                                    Divider()
+
+                                    Button(action: {
+                                        Task {
+                                            await ROMManager().deleteROM(game)
+                                        }
+                                        showingOptions = false
+                                    }) {
+                                        Label("Delete ROM", systemImage: "trash")
+                                            .foregroundColor(.red)
+                                    }
+                                }
+                                .padding()
+                                .frame(width: 200)
+                            }
                         }
 
                         Spacer()
@@ -408,6 +472,9 @@ struct GameDetailView: View {
         .background(Color(NSColor.controlBackgroundColor))
         .task {
             metadata = fetcher.getCachedMetadata(for: game.title)
+        }
+        .onAppear {
+            isFavorite = UserDefaults.standard.bool(forKey: "favorite_\(game.title)")
         }
     }
 
