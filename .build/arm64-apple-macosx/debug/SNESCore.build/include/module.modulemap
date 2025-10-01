@@ -1,0 +1,3 @@
+module SNESCore {
+    header "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/SNESCore.build/include/SNESCore-Swift.h"
+}

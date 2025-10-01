@@ -67,18 +67,21 @@ public final class CoreRegistry {
             return nil
         }
 
-        // N64 Swift core (if exposed to ObjC runtime via @objc/NSObject)
-        if let n64CoreType = coreClass(byTrying: [
-            "N64Core.N64Core",      // Swift module + class
-            "N64Core"               // @objc class name fallback
+        // N64 - Try native core first, fallback to others
+        if let nativeN64 = coreClass(byTrying: [
+            "NativeN64Core",                    // @objc(NativeN64Core)
+            "N64MupenAdapter.NativeN64Core"     // Swift module + class
+        ]) {
+            registerCore(nativeN64, for: .n64)
+            logger.info("✅ Registered native N64 core")
+        } else if let n64CoreType = coreClass(byTrying: [
+            "N64Core.N64Core",
+            "N64Core"
         ]) {
             registerCore(n64CoreType, for: .n64)
-        }
-
-        // Prefer dynamic Mupen adapter only if CLI/core is available locally
-        if isMupenAvailable(), let n64Mupen = coreClass(byTrying: [
-            "N64MupenAdapter",                 // @objc(N64MupenAdapter)
-            "N64MupenAdapter.N64MupenAdapter" // Swift module + class
+        } else if let n64Mupen = coreClass(byTrying: [
+            "N64MupenAdapter",
+            "N64MupenAdapter.N64MupenAdapter"
         ]) {
             registerCore(n64Mupen, for: .n64)
         }

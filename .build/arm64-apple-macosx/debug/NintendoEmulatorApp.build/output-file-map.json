@@ -1,0 +1,19 @@
+{
+  "": {
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/NintendoEmulatorApp.build/master.swiftdeps"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/NintendoEmulatorApp/CoresBootstrap.swift": {
+    "dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/NintendoEmulatorApp.build/CoresBootstrap.d",
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/NintendoEmulatorApp.build/CoresBootstrap.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/NintendoEmulatorApp.build/CoresBootstrap~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/NintendoEmulatorApp.build/CoresBootstrap.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/NintendoEmulatorApp.build/CoresBootstrap.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/NintendoEmulatorApp/NintendoEmulatorApp.swift": {
+    "dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/NintendoEmulatorApp.build/NintendoEmulatorApp.d",
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/NintendoEmulatorApp.build/NintendoEmulatorApp.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/NintendoEmulatorApp.build/NintendoEmulatorApp~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/NintendoEmulatorApp.build/NintendoEmulatorApp.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/NintendoEmulatorApp.build/NintendoEmulatorApp.dia"
+  }
+}

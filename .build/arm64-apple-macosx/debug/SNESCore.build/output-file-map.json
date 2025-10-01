@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/SNESCore.build/master.swiftdeps"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/SNESCore/SNESCore.swift": {
+    "dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/SNESCore.build/SNESCore.d",
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/SNESCore.build/SNESCore.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/SNESCore.build/SNESCore~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/SNESCore.build/SNESCore.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/SNESCore.build/SNESCore.dia"
+  }
+}

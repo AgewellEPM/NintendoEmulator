@@ -176,8 +176,13 @@
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/UserProfileManager.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/VideoRecorder.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorKit.build/YouTubeAPIService.swift.o
+/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIAgentControlPanel.swift.o
+/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIAgentCoordinator.swift.o
+/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIAgentPanel.swift.o
+/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIGameAgent.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIPuppeteer.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIStreamAssistant.swift.o
+/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIVisionService.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AlertsView.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AnalyticsManager.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AnalyticsView.swift.o
@@ -188,6 +193,7 @@
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/ContentCreatorHub.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/ContentSchedulerView.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/ContentView.swift.o
+/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/ControllerInjector.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/CreatorAIAssistant.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/CreatorDashboard.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/CreatorHubComponents.swift.o
@@ -215,8 +221,12 @@
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/IncomeTrackerView.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/InputSettingsView.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/InstagramAPIManager.swift.o
+/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/MachVMMemoryAccess.swift.o
+/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/MemoryReader.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/ModernMediaGallery.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/MultiPlatformChatView.swift.o
+/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/N64InputMemoryInjector.swift.o
+/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/N64MemoryBridge.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/NavigationGroup.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/PermissionWizardView.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/PictureInPicture.swift.o
@@ -225,6 +235,8 @@
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/SaveStateManager.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/ScreenCapturePreview.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/SettingsView.swift.o
+/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/SetupWizard.swift.o
+/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/SimpleAgent.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/SocialAPIConfig.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/SocialAPICoordinator.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/SocialAccountWizard.swift.o
@@ -236,6 +248,7 @@
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/StreamingStatusIndicator.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/StreamingWebcamOverlay.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/StripeService.swift.o
+/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/SuperMario64Adapter.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/TikTokAPIManager.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/TwitchAPIManager.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/TwitchChatClient.swift.o
@@ -252,6 +265,7 @@
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/WindowCapturePreview.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/YouTubeAPIManager.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/YouTubeConnectionView.swift.o
+/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/ZeldaOOTAdapter.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/GameCubeCore.build/GameCubeCore.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/HashTreeCollections.build/TreeDictionary+Codable.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/HashTreeCollections.build/TreeDictionary+Collection.swift.o
@@ -373,6 +387,7 @@
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64Core.build/N64RDP.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64Core.build/N64RSP.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64MupenAdapter.build/N64MupenAdapter.swift.o
+/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64MupenAdapter.build/NativeN64Core.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64VidExtBridge.build/VidExtBridge.m.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/NintendoEmulatorApp.build/CoresBootstrap.swift.o
 /Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/NintendoEmulatorApp.build/NintendoEmulatorApp.swift.o

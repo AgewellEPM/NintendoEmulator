@@ -308,6 +308,12 @@ SWIFT_CLASS_NAMED("N64MupenAdapter")
 + (N64MupenAdapter * _Nullable)createInstanceAndReturnError:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 @end
 
+/// Native N64 emulator using mupen64plus library directly (no CLI process)
+SWIFT_CLASS_NAMED("NativeN64Core")
+@interface NativeN64Core : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 #endif
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

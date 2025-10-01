@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Allow AI agent to read memory from mupen64plus process -->
+	<key>com.apple.security.cs.debugger</key>
+	<true/>
+
+	<!-- Allow AI agent to inject controller inputs -->
+	<key>com.apple.security.cs.allow-unsigned-executable-memory</key>
+	<true/>
+
+	<!-- App Sandbox (if needed) -->
+	<key>com.apple.security.app-sandbox</key>
+	<false/>
+
+	<!-- Network access for streaming, social features, etc. -->
+	<key>com.apple.security.network.client</key>
+	<true/>
+	<key>com.apple.security.network.server</key>
+	<true/>
+
+	<!-- File access for ROM loading, save states, etc. -->
+	<key>com.apple.security.files.user-selected.read-write</key>
+	<true/>
+	<key>com.apple.security.files.downloads.read-write</key>
+	<true/>
+
+	<!-- Audio/Video recording for streaming -->
+	<key>com.apple.security.device.audio-input</key>
+	<true/>
+	<key>com.apple.security.device.camera</key>
+	<true/>
+
+	<!-- Allow launching other processes (mupen64plus) -->
+	<key>com.apple.security.temporary-exception.mach-lookup.global-name</key>
+	<array>
+		<string>*</string>
+	</array>
+</dict>
+</plist>

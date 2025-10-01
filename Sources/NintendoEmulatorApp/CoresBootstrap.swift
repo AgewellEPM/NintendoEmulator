@@ -4,11 +4,13 @@ import Foundation
 import SNESCore
 import GameCubeCore
 import WiiCore
+import N64MupenAdapter
 
 // Reference the types so the linker keeps them
 private let _linkedCores: [Any] = [
     SNESCore.self,
     GameCubeCore.self,
     WiiCore.self,
+    NativeN64Core.self,
 ]
 

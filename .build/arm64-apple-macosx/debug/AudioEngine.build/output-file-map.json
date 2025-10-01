@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/AudioEngine.build/master.swiftdeps"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/AudioEngine/AudioMixer.swift": {
+    "dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/AudioEngine.build/AudioMixer.d",
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/AudioEngine.build/AudioMixer.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/AudioEngine.build/AudioMixer~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/AudioEngine.build/AudioMixer.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/AudioEngine.build/AudioMixer.dia"
+  }
+}

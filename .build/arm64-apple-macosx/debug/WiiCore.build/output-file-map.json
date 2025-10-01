@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/WiiCore.build/master.swiftdeps"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/WiiCore/WiiCore.swift": {
+    "dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/WiiCore.build/WiiCore.d",
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/WiiCore.build/WiiCore.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/WiiCore.build/WiiCore~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/WiiCore.build/WiiCore.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/WiiCore.build/WiiCore.dia"
+  }
+}

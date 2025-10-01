@@ -1,0 +1,4 @@
+module N64VidExtBridge {
+    umbrella "/Users/lukekist/NintendoEmulator/Sources/N64VidExtBridge"
+    export *
+}

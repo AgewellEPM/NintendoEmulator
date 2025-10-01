@@ -1,0 +1,26 @@
+{
+  "": {
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/InputSystem.build/master.swiftdeps"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/InputSystem/ControllerManager.swift": {
+    "dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/InputSystem.build/ControllerManager.d",
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/InputSystem.build/ControllerManager.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/InputSystem.build/ControllerManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/InputSystem.build/ControllerManager.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/InputSystem.build/ControllerManager.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/InputSystem/KeyboardHandler.swift": {
+    "dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/InputSystem.build/KeyboardHandler.d",
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/InputSystem.build/KeyboardHandler.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/InputSystem.build/KeyboardHandler~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/InputSystem.build/KeyboardHandler.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/InputSystem.build/KeyboardHandler.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/InputSystem/SwitchProControllerHID.swift": {
+    "dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/InputSystem.build/SwitchProControllerHID.d",
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/InputSystem.build/SwitchProControllerHID.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/InputSystem.build/SwitchProControllerHID~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/InputSystem.build/SwitchProControllerHID.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/InputSystem.build/SwitchProControllerHID.dia"
+  }
+}

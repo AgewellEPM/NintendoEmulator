@@ -9,5 +9,11 @@
     "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64MupenAdapter.build/N64MupenAdapter~partial.swiftmodule",
     "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64MupenAdapter.build/N64MupenAdapter.swiftdeps",
     "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64MupenAdapter.build/N64MupenAdapter.dia"
+  },
+  "/Users/lukekist/NintendoEmulator/Sources/N64MupenAdapter/NativeN64Core.swift": {
+    "object": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64MupenAdapter.build/NativeN64Core.swift.o",
+    "swiftmodule": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64MupenAdapter.build/NativeN64Core~partial.swiftmodule",
+    "swift-dependencies": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64MupenAdapter.build/NativeN64Core.swiftdeps",
+    "diagnostics": "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64MupenAdapter.build/NativeN64Core.dia"
   }
 }

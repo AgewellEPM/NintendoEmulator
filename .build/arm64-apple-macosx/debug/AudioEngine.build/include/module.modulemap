@@ -1,0 +1,3 @@
+module AudioEngine {
+    header "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/AudioEngine.build/include/AudioEngine-Swift.h"
+}

@@ -2597,11 +2597,31 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIAgentControlPanel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIAgentCoordinator.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIAgentPanel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIGameAgent.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIPuppeteer.swift"
         },
         {
           "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIStreamAssistant.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIVisionService.swift"
         },
         {
           "kind" : "file",
@@ -2646,6 +2666,10 @@
         {
           "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/ContentView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/ControllerInjector.swift"
         },
         {
           "kind" : "file",
@@ -2737,11 +2761,27 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/MachVMMemoryAccess.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/MemoryReader.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/ModernMediaGallery.swift"
         },
         {
           "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/MultiPlatformChatView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/N64InputMemoryInjector.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/N64MemoryBridge.swift"
         },
         {
           "kind" : "file",
@@ -2774,6 +2814,14 @@
         {
           "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/Settings/SettingsView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/SetupWizard.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/SimpleAgent.swift"
         },
         {
           "kind" : "file",
@@ -2845,6 +2893,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/SuperMario64Adapter.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/TwitchChatClient.swift"
         },
         {
@@ -2897,6 +2949,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/ZeldaOOTAdapter.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/swift-version--58304C5D6DBC2206.txt"
         },
         {
@@ -2925,8 +2981,13 @@
       "moduleOutputPath" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/Modules/EmulatorUI.swiftmodule",
       "objects" : [
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/HighlightGenerationView.swift.o",
+        "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIAgentControlPanel.swift.o",
+        "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIAgentCoordinator.swift.o",
+        "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIAgentPanel.swift.o",
+        "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIGameAgent.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIPuppeteer.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIStreamAssistant.swift.o",
+        "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIVisionService.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AlertsView.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AnalyticsManager.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AnalyticsView.swift.o",
@@ -2938,6 +2999,7 @@
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/ContentCreatorHub.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/ContentSchedulerView.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/ContentView.swift.o",
+        "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/ControllerInjector.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/CreatorAIAssistant.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/CreatorDashboard.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/CreatorHubComponents.swift.o",
@@ -2960,8 +3022,12 @@
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/ExtendedThemeManager.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/ImageStorageManager.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/IncomeTrackerView.swift.o",
+        "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/MachVMMemoryAccess.swift.o",
+        "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/MemoryReader.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/ModernMediaGallery.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/MultiPlatformChatView.swift.o",
+        "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/N64InputMemoryInjector.swift.o",
+        "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/N64MemoryBridge.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/StreamOverlayEditor.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/PermissionWizardView.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/PictureInPicture.swift.o",
@@ -2970,6 +3036,8 @@
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/ScreenCapturePreview.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/InputSettingsView.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/SettingsView.swift.o",
+        "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/SetupWizard.swift.o",
+        "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/SimpleAgent.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/DiscordAPIManager.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/InstagramAPIManager.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/SocialAPIConfig.swift.o",
@@ -2987,6 +3055,7 @@
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/StreamingOverlay.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/StreamingWebcamOverlay.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/StripeService.swift.o",
+        "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/SuperMario64Adapter.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/TwitchChatClient.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/TwitchHelixService.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/UIThemeManager.swift.o",
@@ -2999,7 +3068,8 @@
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/VisualEffectView.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/WebcamEffects.swift.o",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/WebcamRecorder.swift.o",
-        "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/WindowCapturePreview.swift.o"
+        "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/WindowCapturePreview.swift.o",
+        "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/ZeldaOOTAdapter.swift.o"
       ],
       "otherArguments" : [
         "-target",
@@ -3018,6 +3088,12 @@
         "-I",
         "-Xcc",
         "/Users/lukekist/NintendoEmulator/.build/checkouts/swift-atomics/Sources/_AtomicsShims/include",
+        "-Xcc",
+        "-fmodule-map-file=/Users/lukekist/NintendoEmulator/Sources/CMupen64Plus/include/module.modulemap",
+        "-Xcc",
+        "-I",
+        "-Xcc",
+        "/Users/lukekist/NintendoEmulator/Sources/CMupen64Plus/include",
         "-Xcc",
         "-fmodule-map-file=/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64VidExtBridge.build/module.modulemap",
         "-Xcc",
@@ -3074,11 +3150,31 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIAgentControlPanel.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIAgentCoordinator.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIAgentPanel.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIGameAgent.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIPuppeteer.swift.o"
         },
         {
           "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIStreamAssistant.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIVisionService.swift.o"
         },
         {
           "kind" : "file",
@@ -3123,6 +3219,10 @@
         {
           "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/ContentView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/ControllerInjector.swift.o"
         },
         {
           "kind" : "file",
@@ -3214,11 +3314,27 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/MachVMMemoryAccess.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/MemoryReader.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/ModernMediaGallery.swift.o"
         },
         {
           "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/MultiPlatformChatView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/N64InputMemoryInjector.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/N64MemoryBridge.swift.o"
         },
         {
           "kind" : "file",
@@ -3251,6 +3367,14 @@
         {
           "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/SettingsView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/SetupWizard.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/SimpleAgent.swift.o"
         },
         {
           "kind" : "file",
@@ -3322,6 +3446,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/SuperMario64Adapter.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/TwitchChatClient.swift.o"
         },
         {
@@ -3374,14 +3502,23 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/ZeldaOOTAdapter.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/Modules/EmulatorUI.swiftmodule"
         }
       ],
       "prepareForIndexing" : false,
       "sources" : [
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AI/HighlightGenerationView.swift",
+        "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIAgentControlPanel.swift",
+        "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIAgentCoordinator.swift",
+        "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIAgentPanel.swift",
+        "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIGameAgent.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIPuppeteer.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIStreamAssistant.swift",
+        "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIVisionService.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AlertsView.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AnalyticsManager.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AnalyticsView.swift",
@@ -3393,6 +3530,7 @@
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/ContentCreatorHub.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/ContentSchedulerView.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/ContentView.swift",
+        "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/ControllerInjector.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/CreatorAIAssistant.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/CreatorDashboard.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/CreatorHubComponents.swift",
@@ -3415,8 +3553,12 @@
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/Helpers/ExtendedThemeManager.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/ImageStorageManager.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/IncomeTrackerView.swift",
+        "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/MachVMMemoryAccess.swift",
+        "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/MemoryReader.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/ModernMediaGallery.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/MultiPlatformChatView.swift",
+        "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/N64InputMemoryInjector.swift",
+        "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/N64MemoryBridge.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/Overlay/StreamOverlayEditor.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/PermissionWizardView.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/PictureInPicture.swift",
@@ -3425,6 +3567,8 @@
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/ScreenCapturePreview.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/Settings/InputSettingsView.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/Settings/SettingsView.swift",
+        "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/SetupWizard.swift",
+        "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/SimpleAgent.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/Social/DiscordAPIManager.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/Social/InstagramAPIManager.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/Social/SocialAPIConfig.swift",
@@ -3442,6 +3586,7 @@
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/StreamingOverlay.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/StreamingWebcamOverlay.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/StripeService.swift",
+        "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/SuperMario64Adapter.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/TwitchChatClient.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/TwitchHelixService.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/UIThemeManager.swift",
@@ -3454,7 +3599,8 @@
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/VisualEffectView.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/WebcamEffects.swift",
         "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/WebcamRecorder.swift",
-        "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/WindowCapturePreview.swift"
+        "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/WindowCapturePreview.swift",
+        "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/ZeldaOOTAdapter.swift"
       ],
       "tempsPath" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build",
       "wholeModuleOptimization" : true
@@ -5314,6 +5460,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/N64MupenAdapter/NativeN64Core.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/swift-version--58304C5D6DBC2206.txt"
         },
         {
@@ -5334,6 +5484,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/Modules/InputSystem.swiftmodule"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/Modules/Logging.swiftmodule"
         },
         {
@@ -5345,7 +5499,8 @@
       "moduleName" : "N64MupenAdapter",
       "moduleOutputPath" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/Modules/N64MupenAdapter.swiftmodule",
       "objects" : [
-        "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64MupenAdapter.build/N64MupenAdapter.swift.o"
+        "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64MupenAdapter.build/N64MupenAdapter.swift.o",
+        "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64MupenAdapter.build/NativeN64Core.swift.o"
       ],
       "otherArguments" : [
         "-target",
@@ -5370,6 +5525,12 @@
         "-I",
         "-Xcc",
         "/Users/lukekist/NintendoEmulator/Sources/N64VidExtBridge",
+        "-Xcc",
+        "-fmodule-map-file=/Users/lukekist/NintendoEmulator/Sources/CMupen64Plus/include/module.modulemap",
+        "-Xcc",
+        "-I",
+        "-Xcc",
+        "/Users/lukekist/NintendoEmulator/Sources/CMupen64Plus/include",
         "-module-cache-path",
         "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/ModuleCache",
         "-parseable-output",
@@ -5420,12 +5581,17 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64MupenAdapter.build/NativeN64Core.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/Modules/N64MupenAdapter.swiftmodule"
         }
       ],
       "prepareForIndexing" : false,
       "sources" : [
-        "/Users/lukekist/NintendoEmulator/Sources/N64MupenAdapter/N64MupenAdapter.swift"
+        "/Users/lukekist/NintendoEmulator/Sources/N64MupenAdapter/N64MupenAdapter.swift",
+        "/Users/lukekist/NintendoEmulator/Sources/N64MupenAdapter/NativeN64Core.swift"
       ],
       "tempsPath" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64MupenAdapter.build",
       "wholeModuleOptimization" : true
@@ -5516,6 +5682,12 @@
         "-I",
         "-Xcc",
         "/Users/lukekist/NintendoEmulator/.build/checkouts/swift-atomics/Sources/_AtomicsShims/include",
+        "-Xcc",
+        "-fmodule-map-file=/Users/lukekist/NintendoEmulator/Sources/CMupen64Plus/include/module.modulemap",
+        "-Xcc",
+        "-I",
+        "-Xcc",
+        "/Users/lukekist/NintendoEmulator/Sources/CMupen64Plus/include",
         "-Xcc",
         "-fmodule-map-file=/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64VidExtBridge.build/module.modulemap",
         "-Xcc",
@@ -8179,8 +8351,13 @@
       "nintendoemulator",
       "-c",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AI/HighlightGenerationView.swift",
+      "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIAgentControlPanel.swift",
+      "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIAgentCoordinator.swift",
+      "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIAgentPanel.swift",
+      "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIGameAgent.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIPuppeteer.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIStreamAssistant.swift",
+      "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIVisionService.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AlertsView.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AnalyticsManager.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AnalyticsView.swift",
@@ -8192,6 +8369,7 @@
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/ContentCreatorHub.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/ContentSchedulerView.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/ContentView.swift",
+      "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/ControllerInjector.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/CreatorAIAssistant.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/CreatorDashboard.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/CreatorHubComponents.swift",
@@ -8214,8 +8392,12 @@
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/Helpers/ExtendedThemeManager.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/ImageStorageManager.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/IncomeTrackerView.swift",
+      "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/MachVMMemoryAccess.swift",
+      "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/MemoryReader.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/ModernMediaGallery.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/MultiPlatformChatView.swift",
+      "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/N64InputMemoryInjector.swift",
+      "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/N64MemoryBridge.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/Overlay/StreamOverlayEditor.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/PermissionWizardView.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/PictureInPicture.swift",
@@ -8224,6 +8406,8 @@
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/ScreenCapturePreview.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/Settings/InputSettingsView.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/Settings/SettingsView.swift",
+      "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/SetupWizard.swift",
+      "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/SimpleAgent.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/Social/DiscordAPIManager.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/Social/InstagramAPIManager.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/Social/SocialAPIConfig.swift",
@@ -8241,6 +8425,7 @@
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/StreamingOverlay.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/StreamingWebcamOverlay.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/StripeService.swift",
+      "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/SuperMario64Adapter.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/TwitchChatClient.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/TwitchHelixService.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/UIThemeManager.swift",
@@ -8254,6 +8439,7 @@
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/WebcamEffects.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/WebcamRecorder.swift",
       "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/WindowCapturePreview.swift",
+      "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/ZeldaOOTAdapter.swift",
       "-I",
       "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/Modules",
       "-target",
@@ -8272,6 +8458,12 @@
       "-I",
       "-Xcc",
       "/Users/lukekist/NintendoEmulator/.build/checkouts/swift-atomics/Sources/_AtomicsShims/include",
+      "-Xcc",
+      "-fmodule-map-file=/Users/lukekist/NintendoEmulator/Sources/CMupen64Plus/include/module.modulemap",
+      "-Xcc",
+      "-I",
+      "-Xcc",
+      "/Users/lukekist/NintendoEmulator/Sources/CMupen64Plus/include",
       "-Xcc",
       "-fmodule-map-file=/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64VidExtBridge.build/module.modulemap",
       "-Xcc",
@@ -8904,6 +9096,7 @@
       "nintendoemulator",
       "-c",
       "/Users/lukekist/NintendoEmulator/Sources/N64MupenAdapter/N64MupenAdapter.swift",
+      "/Users/lukekist/NintendoEmulator/Sources/N64MupenAdapter/NativeN64Core.swift",
       "-I",
       "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/Modules",
       "-target",
@@ -8928,6 +9121,12 @@
       "-I",
       "-Xcc",
       "/Users/lukekist/NintendoEmulator/Sources/N64VidExtBridge",
+      "-Xcc",
+      "-fmodule-map-file=/Users/lukekist/NintendoEmulator/Sources/CMupen64Plus/include/module.modulemap",
+      "-Xcc",
+      "-I",
+      "-Xcc",
+      "/Users/lukekist/NintendoEmulator/Sources/CMupen64Plus/include",
       "-module-cache-path",
       "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/ModuleCache",
       "-parseable-output",
@@ -8999,6 +9198,12 @@
       "-I",
       "-Xcc",
       "/Users/lukekist/NintendoEmulator/.build/checkouts/swift-atomics/Sources/_AtomicsShims/include",
+      "-Xcc",
+      "-fmodule-map-file=/Users/lukekist/NintendoEmulator/Sources/CMupen64Plus/include/module.modulemap",
+      "-Xcc",
+      "-I",
+      "-Xcc",
+      "/Users/lukekist/NintendoEmulator/Sources/CMupen64Plus/include",
       "-Xcc",
       "-fmodule-map-file=/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64VidExtBridge.build/module.modulemap",
       "-Xcc",
@@ -9526,6 +9731,9 @@
     "BitCollections" : [
       "InternalCollectionsUtilities"
     ],
+    "CMupen64Plus" : [
+
+    ],
     "Collections" : [
       "_RopeModule",
       "OrderedCollections",
@@ -9558,6 +9766,7 @@
     ],
     "EmulatorUI" : [
       "N64MupenAdapter",
+      "CMupen64Plus",
       "N64VidExtBridge",
       "InputSystem",
       "RenderingEngine",
@@ -9616,6 +9825,8 @@
       "CoreInterface"
     ],
     "N64MupenAdapter" : [
+      "InputSystem",
+      "CMupen64Plus",
       "N64VidExtBridge",
       "RenderingEngine",
       "EmulatorKit",
@@ -9644,6 +9855,7 @@
       "AudioEngine",
       "EmulatorUI",
       "N64MupenAdapter",
+      "CMupen64Plus",
       "N64VidExtBridge",
       "InputSystem",
       "RenderingEngine",
@@ -10499,11 +10711,31 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIAgentControlPanel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIAgentCoordinator.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIAgentPanel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIGameAgent.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIPuppeteer.swift"
         },
         {
           "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIStreamAssistant.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/AIVisionService.swift"
         },
         {
           "kind" : "file",
@@ -10548,6 +10780,10 @@
         {
           "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/ContentView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/ControllerInjector.swift"
         },
         {
           "kind" : "file",
@@ -10639,11 +10875,27 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/MachVMMemoryAccess.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/MemoryReader.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/ModernMediaGallery.swift"
         },
         {
           "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/MultiPlatformChatView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/N64InputMemoryInjector.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/N64MemoryBridge.swift"
         },
         {
           "kind" : "file",
@@ -10676,6 +10928,14 @@
         {
           "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/Settings/SettingsView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/SetupWizard.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/SimpleAgent.swift"
         },
         {
           "kind" : "file",
@@ -10747,6 +11007,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/SuperMario64Adapter.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/TwitchChatClient.swift"
         },
         {
@@ -10796,6 +11060,10 @@
         {
           "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/WindowCapturePreview.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/EmulatorUI/ZeldaOOTAdapter.swift"
         }
       ],
       "outputFilePath" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/sources"
@@ -11360,6 +11628,10 @@
         {
           "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/Sources/N64MupenAdapter/N64MupenAdapter.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/Sources/N64MupenAdapter/NativeN64Core.swift"
         }
       ],
       "outputFilePath" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64MupenAdapter.build/sources"
@@ -12085,11 +12357,31 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIAgentControlPanel.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIAgentCoordinator.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIAgentPanel.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIGameAgent.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIPuppeteer.swift.o"
         },
         {
           "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIStreamAssistant.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/AIVisionService.swift.o"
         },
         {
           "kind" : "file",
@@ -12130,6 +12422,10 @@
         {
           "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/ContentView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/ControllerInjector.swift.o"
         },
         {
           "kind" : "file",
@@ -12241,11 +12537,27 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/MachVMMemoryAccess.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/MemoryReader.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/ModernMediaGallery.swift.o"
         },
         {
           "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/MultiPlatformChatView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/N64InputMemoryInjector.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/N64MemoryBridge.swift.o"
         },
         {
           "kind" : "file",
@@ -12278,6 +12590,14 @@
         {
           "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/SettingsView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/SetupWizard.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/SimpleAgent.swift.o"
         },
         {
           "kind" : "file",
@@ -12322,6 +12642,10 @@
         {
           "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/StripeService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/SuperMario64Adapter.swift.o"
         },
         {
           "kind" : "file",
@@ -12386,6 +12710,10 @@
         {
           "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/YouTubeConnectionView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/EmulatorUI.build/ZeldaOOTAdapter.swift.o"
         },
         {
           "kind" : "file",
@@ -12870,6 +13198,10 @@
         {
           "kind" : "file",
           "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64MupenAdapter.build/N64MupenAdapter.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/release/N64MupenAdapter.build/NativeN64Core.swift.o"
         },
         {
           "kind" : "file",

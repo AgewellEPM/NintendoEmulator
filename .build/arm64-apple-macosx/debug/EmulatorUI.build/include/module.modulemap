@@ -1,0 +1,3 @@
+module EmulatorUI {
+    header "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/EmulatorUI.build/include/EmulatorUI-Swift.h"
+}

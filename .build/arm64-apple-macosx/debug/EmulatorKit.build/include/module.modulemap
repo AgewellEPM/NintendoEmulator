@@ -1,0 +1,3 @@
+module EmulatorKit {
+    header "/Users/lukekist/NintendoEmulator/.build/arm64-apple-macosx/debug/EmulatorKit.build/include/EmulatorKit-Swift.h"
+}
