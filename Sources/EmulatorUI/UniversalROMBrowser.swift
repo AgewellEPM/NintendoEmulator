@@ -6,42 +6,30 @@ import UniformTypeIdentifiers
 /// Universal ROM Browser that shows actual game library
 public struct UniversalROMBrowser: View {
     @StateObject private var romManager = ROMManager()
-    @State private var selectedSystem: String = "Nintendo 64"
+    @State private var selectedSystem: EmulatorSystem? = .n64
     @State private var searchText = ""
     @State private var selectedGame: ROMMetadata?
     @State private var showingImporter = false
-
-    // Sample N64 games for testing
-    let sampleGames = [
-        ("Duke Nukem: Zero Hour", "Action/Shooter", "1999"),
-        ("Super Mario 64", "Platform", "1996"),
-        ("GoldenEye 007", "FPS", "1997"),
-        ("The Legend of Zelda: Ocarina of Time", "Adventure", "1998"),
-        ("Mario Kart 64", "Racing", "1996"),
-        ("Star Fox 64", "Shooter", "1997"),
-        ("Perfect Dark", "FPS", "2000"),
-        ("Banjo-Kazooie", "Platform", "1998"),
-        ("F-Zero X", "Racing", "1998"),
-        ("Super Smash Bros.", "Fighting", "1999")
-    ]
+    @State private var isDraggingOver = false
 
     public init() {}
 
     public var body: some View {
-        HSplitView {
-            // Left sidebar with game list
-            VStack(spacing: 0) {
+        GeometryReader { geometry in
+            HStack(spacing: 0) {
+                // Left sidebar with game list
+                VStack(spacing: 0) {
                 // System selector and search
                 VStack(spacing: DesignSystem.Spacing.md) {
                     Menu {
-                        Button("Nintendo 64") { selectedSystem = "Nintendo 64" }
-                        Button("GameCube") { selectedSystem = "GameCube" }
-                        Button("SNES") { selectedSystem = "SNES" }
-                        Button("NES") { selectedSystem = "NES" }
+                        Button("All Systems") { selectedSystem = nil }
+                        ForEach(EmulatorSystem.allCases, id: \.self) { system in
+                            Button(system.displayName) { selectedSystem = system }
+                        }
                     } label: {
                         HStack {
                             Image(systemName: "gamecontroller.fill")
-                            Text(selectedSystem)
+                            Text(selectedSystem?.displayName ?? "All Systems")
                             Spacer()
                             Image(systemName: "chevron.down")
                         }
@@ -66,40 +54,97 @@ public struct UniversalROMBrowser: View {
 
                 Divider()
 
-                // Game list
+                // Game list - show actual ROMs
                 ScrollView {
                     VStack(spacing: 2) {
-                        ForEach(filteredGames, id: \.0) { game in
-                            GameRowView(
-                                title: game.0,
-                                genre: game.1,
-                                year: game.2,
-                                isSelected: selectedGame?.title == game.0
-                            )
-                            .onTapGesture {
-                                selectedGame = ROMMetadata(
-                                    path: URL(fileURLWithPath: "/Games/\(game.0).n64"),
-                                    system: .n64,
-                                    title: game.0,
-                                    region: "USA",
-                                    checksum: "",
-                                    size: 32000000,
-                                    header: nil
+                        if romManager.isLoading {
+                            VStack(spacing: 12) {
+                                ProgressView()
+                                    .scaleEffect(1.5)
+                                Text("Loading ROMs...")
+                                    .font(.headline)
+                                Text("Found \(romManager.roms.count) so far...")
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding(40)
+                        } else if filteredROMs.isEmpty {
+                            VStack(spacing: 12) {
+                                Image(systemName: "gamecontroller")
+                                    .font(.system(size: 48))
+                                    .foregroundStyle(.secondary)
+                                Text("No ROMs Found")
+                                    .font(.headline)
+                                Text("Drag & drop ROMs here or click Import")
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding(40)
+                        } else {
+                            ForEach(filteredROMs, id: \.path) { rom in
+                                GameRowView(
+                                    title: rom.title,
+                                    genre: rom.system.displayName,
+                                    year: rom.region ?? "Unknown",
+                                    isSelected: selectedGame?.path == rom.path
                                 )
+                                .onTapGesture {
+                                    selectedGame = rom
+                                }
                             }
                         }
                     }
                     .padding(.vertical, 4)
+                }
+                .overlay(
+                    // Drag and drop overlay
+                    isDraggingOver ?
+                    RoundedRectangle(cornerRadius: 8)
+                        .strokeBorder(Color.blue, lineWidth: 3, antialiased: true)
+                        .background(
+                            Color.blue.opacity(0.1)
+                                .cornerRadius(8)
+                        )
+                        .overlay(
+                            VStack(spacing: 12) {
+                                Image(systemName: "arrow.down.circle.fill")
+                                    .font(.system(size: 48))
+                                    .foregroundColor(.blue)
+                                Text("Drop ROM files to import")
+                                    .font(.headline)
+                                    .foregroundColor(.blue)
+                            }
+                        )
+                        .padding(8)
+                    : nil
+                )
+                .onDrop(of: [.fileURL], isTargeted: $isDraggingOver) { providers in
+                    handleDrop(providers: providers)
                 }
 
                 Divider()
 
                 // Bottom toolbar
                 HStack {
-                    Button(action: { showingImporter = true }) {
+                    Menu {
+                        Button(action: { showingImporter = true }) {
+                            Label("Open Folder", systemImage: "folder")
+                        }
+
+                        Button(action: {
+                            if let url = URL(string: "https://romhustler.org/") {
+                                NSWorkspace.shared.open(url)
+                            }
+                        }) {
+                            Label("Visit romhustler.org", systemImage: "safari")
+                        }
+                    } label: {
                         Label("Import", systemImage: "plus.circle")
                     }
                     .buttonStyle(BorderlessButtonStyle())
+                    .menuStyle(BorderlessButtonMenuStyle())
 
                     Spacer()
 
@@ -111,11 +156,16 @@ public struct UniversalROMBrowser: View {
                 .padding(10)
                 .background(Color(NSColor.controlBackgroundColor))
             }
-            .frame(minWidth: 280, idealWidth: 320)
+            .frame(width: 320)
+
+            Divider()
 
             // Right side - game details
             if let game = selectedGame {
-                GameDetailView(game: game)
+                GameDetailsView(game: game)
+                    .environmentObject(romManager)
+                    .id(game.path) // Force view recreation when game changes
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
                 VStack {
                     Image(systemName: "gamecontroller.fill")
@@ -128,32 +178,82 @@ public struct UniversalROMBrowser: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color(NSColor.controlBackgroundColor))
             }
+            }
         }
         .fileImporter(
             isPresented: $showingImporter,
-            allowedContentTypes: [.item],
+            allowedContentTypes: [
+                UTType(filenameExtension: "n64")!,
+                UTType(filenameExtension: "z64")!,
+                UTType(filenameExtension: "v64")!,
+                .item
+            ],
             allowsMultipleSelection: true
         ) { result in
             handleFileImport(result)
         }
+        .onAppear {
+            // Load ROMs in background, don't block UI
+            Task(priority: .background) {
+                await romManager.loadROMs()
+            }
+        }
     }
 
-    var filteredGames: [(String, String, String)] {
-        if searchText.isEmpty {
-            return sampleGames
+    var filteredROMs: [ROMMetadata] {
+        var roms = romManager.roms
+
+        // Filter by system if selected
+        if let system = selectedSystem {
+            roms = roms.filter { $0.system == system }
         }
-        return sampleGames.filter { $0.0.localizedCaseInsensitiveContains(searchText) }
+
+        // Filter by search text
+        if !searchText.isEmpty {
+            roms = roms.filter { $0.title.localizedCaseInsensitiveContains(searchText) }
+        }
+
+        return roms
     }
 
     private func handleFileImport(_ result: Result<[URL], Error>) {
         switch result {
-        case .success(_):
+        case .success(let urls):
             Task {
-                await romManager.loadROMs()
+                await romManager.addROMs(from: urls)
             }
         case .failure(let error):
             print("Import failed: \(error)")
         }
+    }
+
+    private func handleDrop(providers: [NSItemProvider]) -> Bool {
+        var urls: [URL] = []
+        let group = DispatchGroup()
+
+        for provider in providers {
+            group.enter()
+            _ = provider.loadObject(ofClass: URL.self) { url, error in
+                defer { group.leave() }
+                if let url = url {
+                    // Check if it's a ROM file (.n64, .z64, .v64)
+                    let ext = url.pathExtension.lowercased()
+                    if ["n64", "z64", "v64"].contains(ext) {
+                        urls.append(url)
+                    }
+                }
+            }
+        }
+
+        group.notify(queue: .main) {
+            if !urls.isEmpty {
+                Task {
+                    await romManager.addROMs(from: urls)
+                }
+            }
+        }
+
+        return true
     }
 }
 
@@ -195,32 +295,44 @@ struct GameRowView: View {
 
 struct GameDetailView: View {
     let game: ROMMetadata
+    @StateObject private var fetcher = GameMetadataFetcher()
+    @State private var metadata: GameMetadataFetcher.GameMetadata?
+    @StateObject private var storageManager = ImageStorageManager.shared
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: DesignSystem.Spacing.xxl) {
                 // Game header
                 HStack(alignment: .top, spacing: DesignSystem.Spacing.xl) {
-                    // Cover art placeholder
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(LinearGradient(
-                            colors: [Color.blue, Color.purple],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        ))
-                        .frame(width: 200, height: 280)
-                        .overlay(
-                            VStack {
-                                Image(systemName: "gamecontroller.fill")
-                                    .font(.system(size: 50))
-                                    .foregroundStyle(.white.opacity(0.8))
-                                Text(game.title)
-                                    .font(.caption)
-                                    .foregroundStyle(.white)
-                                    .multilineTextAlignment(.center)
-                                    .padding(.horizontal)
-                            }
-                        )
+                    // Cover art - show real box art or fallback
+                    if let boxArt = metadata?.boxArtImage ?? storageManager.loadImage(gameTitle: game.title, imageType: .libraryThumbnail) {
+                        Image(nsImage: boxArt)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 200, height: 280)
+                            .cornerRadius(10)
+                            .shadow(radius: 5)
+                    } else {
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(LinearGradient(
+                                colors: [Color.blue, Color.purple],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            ))
+                            .frame(width: 200, height: 280)
+                            .overlay(
+                                VStack {
+                                    Image(systemName: "gamecontroller.fill")
+                                        .font(.system(size: 50))
+                                        .foregroundStyle(.white.opacity(0.8))
+                                    Text(game.title)
+                                        .font(.caption)
+                                        .foregroundStyle(.white)
+                                        .multilineTextAlignment(.center)
+                                        .padding(.horizontal)
+                                }
+                            )
+                    }
 
                     VStack(alignment: .leading, spacing: DesignSystem.Spacing.lg) {
                         Text(game.title)
@@ -294,6 +406,9 @@ struct GameDetailView: View {
             }
         }
         .background(Color(NSColor.controlBackgroundColor))
+        .task {
+            metadata = fetcher.getCachedMetadata(for: game.title)
+        }
     }
 
     private func gameDescription(for title: String) -> String {

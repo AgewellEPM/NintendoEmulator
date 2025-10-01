@@ -1000,9 +1000,10 @@ struct N64ControllerMappingView: View {
 
     private func saveConfiguration() {
         // Save to UserDefaults or config file
-        let configPath = FileManager.default.homeDirectoryForCurrentUser
+        let _ = FileManager.default.homeDirectoryForCurrentUser
             .appendingPathComponent(".config/mupen64plus/InputAutoCfg.ini")
 
+        // TODO: Implement configuration saving
         // Show success notification
         NSSound.beep()
     }

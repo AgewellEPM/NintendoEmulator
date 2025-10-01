@@ -3,6 +3,7 @@ import CoreInterface
 import Combine
 import os.log
 import N64VidExtBridge
+import InputSystem
 
 // Minimal dynamic loader for mupen64plus core; video/audio/input wiring to follow.
 @objc(N64MupenAdapter)
@@ -34,6 +35,10 @@ public final class N64MupenAdapter: NSObject, EmulatorCoreProtocol, EmulatorRend
     private var romData: Data?
     private var mupenProcess: Process?
     private var romPath: String?
+
+    // Direct memory input injection
+    private var inputInjectionCallback: ((EmulatorButton, Bool) -> Void)?
+    private var analogInjectionCallback: ((Float, Float) -> Void)?
 
     // Core API function pointers (subset)
     typealias CoreStartupFn = @convention(c) (UInt32, UnsafePointer<Int8>?, UnsafePointer<Int8>?, UnsafePointer<Int8>?, UnsafePointer<Int8>?, UnsafeMutablePointer<UnsafeMutablePointer<Int8>?>?) -> Int32
@@ -70,6 +75,20 @@ public final class N64MupenAdapter: NSObject, EmulatorCoreProtocol, EmulatorRend
 
     public override init() {
         super.init()
+
+        // Register as input delegate for player 0
+        ControllerManager.shared.setInputDelegate(self, for: 0)
+        NSLog("[N64MupenAdapter] ✅ Registered as input delegate for AI controller injection")
+    }
+
+    /// Set direct memory input injection callbacks
+    public func setInputInjectionCallbacks(
+        buttonCallback: @escaping (EmulatorButton, Bool) -> Void,
+        analogCallback: @escaping (Float, Float) -> Void
+    ) {
+        self.inputInjectionCallback = buttonCallback
+        self.analogInjectionCallback = analogCallback
+        NSLog("[N64MupenAdapter] ✅ Input injection callbacks registered")
     }
 
     // Alternative throwing initializer for EmulatorCoreProtocol compatibility
@@ -507,3 +526,61 @@ public final class N64MupenAdapter: NSObject, EmulatorCoreProtocol, EmulatorRend
 
 
 extension N64MupenAdapter: @unchecked Sendable {}
+
+// MARK: - EmulatorInputProtocol Implementation
+
+extension N64MupenAdapter: EmulatorInputProtocol {
+    public func setButtonState(player: Int, button: EmulatorButton, pressed: Bool) {
+        NSLog("[N64MupenAdapter] Button \(button) \(pressed ? "pressed" : "released") for player \(player)")
+
+        // Use direct memory injection callback if available
+        if let callback = inputInjectionCallback {
+            callback(button, pressed)
+        } else {
+            NSLog("[N64MupenAdapter] ⚠️ No input injection callback registered")
+        }
+    }
+
+    public func setAnalogState(player: Int, stick: AnalogStick, x: Float, y: Float) {
+        NSLog("[N64MupenAdapter] Analog stick \(stick): (\(x), \(y)) for player \(player)")
+
+        // Use direct memory injection callback if available
+        if let callback = analogInjectionCallback {
+            callback(x, y)
+        } else {
+            NSLog("[N64MupenAdapter] ⚠️ No analog injection callback registered")
+        }
+    }
+
+    public func setTriggerState(player: Int, trigger: Trigger, value: Float) {
+        // N64 has Z button (digital) and L/R triggers
+        // Map trigger to Z button if > 0.5
+        if value > 0.5 {
+            setButtonState(player: player, button: .zl, pressed: true)
+        } else {
+            setButtonState(player: player, button: .zl, pressed: false)
+        }
+    }
+
+    public func rumble(player: Int, intensity: Float, duration: TimeInterval) {
+        // Rumble pak support (optional - TODO)
+        NSLog("[N64MupenAdapter] Rumble: \(intensity) for \(duration)s")
+    }
+
+    public func setTouchState(x: Int, y: Int, pressed: Bool) {
+        // N64 has no touch screen
+    }
+
+    public func setAccelerometer(x: Float, y: Float, z: Float) {
+        // N64 has no accelerometer
+    }
+
+    public func setGyroscope(pitch: Float, roll: Float, yaw: Float) {
+        // N64 has no gyroscope
+    }
+
+    public func getInputState(player: Int) -> InputState {
+        // Return empty state - input is handled by mupen64plus SDL plugin
+        return InputState()
+    }
+}

@@ -107,22 +107,24 @@ public class GameMetadataFetcher: ObservableObject {
             metadata = await generateWithAI(gameName: gameName)
         }
 
-        // 3. Try to fetch box art
+        // 3. Always generate box art (placeholder or real)
         if var gameMetadata = metadata {
-            if let boxArt = await fetchBoxArt(for: gameName) {
-                gameMetadata = GameMetadata(
-                    title: gameMetadata.title,
-                    cleanedTitle: gameMetadata.cleanedTitle,
-                    description: gameMetadata.description,
-                    genre: gameMetadata.genre,
-                    releaseYear: gameMetadata.releaseYear,
-                    developer: gameMetadata.developer,
-                    publisher: gameMetadata.publisher,
-                    rating: gameMetadata.rating,
-                    boxArtURL: nil,
-                    boxArtData: boxArt
-                )
-            }
+            let boxArt = await fetchBoxArt(for: gameName)
+            gameMetadata = GameMetadata(
+                title: gameMetadata.title,
+                cleanedTitle: gameMetadata.cleanedTitle,
+                description: gameMetadata.description,
+                genre: gameMetadata.genre,
+                releaseYear: gameMetadata.releaseYear,
+                developer: gameMetadata.developer,
+                publisher: gameMetadata.publisher,
+                rating: gameMetadata.rating,
+                boxArtURL: nil,
+                boxArtData: boxArt
+            )
+
+            // Cache it
+            metadataCache[rom.title] = gameMetadata
             return gameMetadata
         }
 

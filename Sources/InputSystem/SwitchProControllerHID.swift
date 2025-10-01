@@ -69,10 +69,11 @@ public final class SwitchProControllerHID: ObservableObject {
             return
         }
 
-        // Set device matching for Switch Pro Controller
+        // Match ANY gamepad (UsagePage 1, Usage 5)
+        // This works for official Switch Pro Controllers AND third-party clones
         let deviceMatch: [String: Any] = [
-            kIOHIDVendorIDKey: vendorID,
-            kIOHIDProductIDKey: productID
+            kIOHIDPrimaryUsagePageKey: 1,  // Generic Desktop
+            kIOHIDPrimaryUsageKey: 5       // Gamepad
         ]
 
         IOHIDManagerSetDeviceMatching(manager, deviceMatch as CFDictionary)

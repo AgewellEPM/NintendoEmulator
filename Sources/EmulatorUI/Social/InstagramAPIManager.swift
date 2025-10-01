@@ -4,7 +4,7 @@ import EmulatorKit
 
 class InstagramAPIManager: ObservableObject {
     private let clientId = SocialAPIConfig.Instagram.clientId
-    private let clientSecret = SocialAPIConfig.Instagram.clientSecret
+    // ⚠️ REMOVED: Client secrets must be handled by backend OAuth proxy
     private let redirectURI = SocialAPIConfig.Instagram.redirectURI
     private let baseURL = "https://graph.instagram.com"
 
@@ -43,13 +43,13 @@ class InstagramAPIManager: ObservableObject {
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
+        // ⚠️ This will fail without client secret - backend proxy required
         let bodyString = "client_id=\(clientId)&" +
-            "client_secret=\(clientSecret)&" +
             "grant_type=authorization_code&" +
             "redirect_uri=\(redirectURI)&" +
             "code=\(code)"
 
-        request.httpBody = bodyString.data(using: .utf8)
+        request.httpBody = bodyString.data(using: String.Encoding.utf8)
 
         do {
             let (data, _) = try await URLSession.shared.data(for: request)
@@ -64,9 +64,9 @@ class InstagramAPIManager: ObservableObject {
     }
 
     private func exchangeForLongLivedToken(shortToken: String) async {
+        // ⚠️ This will fail without client secret - backend proxy required
         let longTokenURL = "https://graph.instagram.com/access_token?" +
             "grant_type=ig_exchange_token&" +
-            "client_secret=\(clientSecret)&" +
             "access_token=\(shortToken)"
 
         guard let url = URL(string: longTokenURL) else { return }

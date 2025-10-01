@@ -139,14 +139,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         // Set up app as a proper regular application
         NSApp.setActivationPolicy(.regular)
 
-        // Load Blockbuster-style app icon
-        if let iconURL = Bundle.main.url(forResource: "Resources/AppIcon", withExtension: "icns"),
-           let icon = NSImage(contentsOf: iconURL) {
-            NSApp.applicationIconImage = icon
-        } else {
-            // Fallback: try named asset
-            NSApp.applicationIconImage = NSImage(named: "AppIcon")
-        }
+        // Icon loads automatically from Info.plist CFBundleIconFile
+        // No manual loading needed - macOS handles it
 
         NSApp.activate(ignoringOtherApps: true)
     }

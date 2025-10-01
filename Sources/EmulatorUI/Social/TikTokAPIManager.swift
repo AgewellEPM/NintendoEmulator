@@ -4,7 +4,7 @@ import EmulatorKit
 
 class TikTokAPIManager: ObservableObject {
     private let clientKey = SocialAPIConfig.TikTok.clientKey
-    private let clientSecret = SocialAPIConfig.TikTok.clientSecret
+    // ⚠️ REMOVED: Client secrets must be handled by backend OAuth proxy
     private let redirectURI = SocialAPIConfig.TikTok.redirectURI
     private let baseURL = "https://open-api.tiktok.com"
 
@@ -57,13 +57,13 @@ class TikTokAPIManager: ObservableObject {
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
+        // ⚠️ This will fail without client secret - backend proxy required
         let bodyString = "client_key=\(clientKey)&" +
-            "client_secret=\(clientSecret)&" +
             "code=\(code)&" +
             "grant_type=authorization_code&" +
             "redirect_uri=\(redirectURI)"
 
-        request.httpBody = bodyString.data(using: .utf8)
+        request.httpBody = bodyString.data(using: String.Encoding.utf8)
 
         do {
             let (data, _) = try await URLSession.shared.data(for: request)

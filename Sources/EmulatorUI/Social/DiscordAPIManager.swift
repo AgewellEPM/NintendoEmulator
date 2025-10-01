@@ -4,7 +4,7 @@ import EmulatorKit
 
 class DiscordAPIManager: ObservableObject {
     private let clientId = SocialAPIConfig.Discord.clientId
-    private let clientSecret = SocialAPIConfig.Discord.clientSecret
+    // ⚠️ REMOVED: Client secrets must be handled by backend OAuth proxy
     private let redirectURI = SocialAPIConfig.Discord.redirectURI
     private let baseURL = "https://discord.com/api/v10"
 
@@ -46,13 +46,13 @@ class DiscordAPIManager: ObservableObject {
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
+        // ⚠️ This will fail without client secret - backend proxy required
         let bodyString = "client_id=\(clientId)&" +
-            "client_secret=\(clientSecret)&" +
             "grant_type=authorization_code&" +
             "code=\(code)&" +
             "redirect_uri=\(redirectURI)"
 
-        request.httpBody = bodyString.data(using: .utf8)
+        request.httpBody = bodyString.data(using: String.Encoding.utf8)
 
         do {
             let (data, _) = try await URLSession.shared.data(for: request)

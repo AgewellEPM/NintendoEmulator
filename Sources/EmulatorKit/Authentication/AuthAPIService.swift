@@ -2,17 +2,103 @@ import Foundation
 
 /// Sprint 1 - AUTH-001: API Service for Authentication
 /// Backend communication layer for user authentication
-public class AuthAPIService {
+/// 🔒 SECURITY: Implements certificate pinning to prevent MITM attacks
+public class AuthAPIService: NSObject, URLSessionDelegate {
     internal let baseURL: URL
-    internal let session: URLSession
+    internal var session: URLSession  // var to allow re-initialization after super.init()
+    private let pinnedCertificates: [Data]
 
     public init(baseURL: String = "https://api.nintendoemulator.app/v1") {
         self.baseURL = URL(string: baseURL)!
 
+        // 🔒 Load pinned certificates from bundle
+        // TODO: Add actual certificates to bundle as .cer files
+        self.pinnedCertificates = [
+            Self.loadCertificate(named: "api-nintendoemulator-app"),
+            Self.loadCertificate(named: "api-nintendoemulator-app-backup")
+        ].compactMap { $0 }
+
         let config = URLSessionConfiguration.default
         config.timeoutIntervalForRequest = 30
         config.timeoutIntervalForResource = 60
-        self.session = URLSession(configuration: config)
+
+        // Initialize session before super.init() - required for struct initialization
+        let tempSession = URLSession(configuration: config)
+        self.session = tempSession
+
+        super.init()
+
+        // Replace session with delegate-enabled version after super.init()
+        self.session = URLSession(configuration: config, delegate: self, delegateQueue: nil)
+
+        if pinnedCertificates.isEmpty {
+            NSLog("⚠️ WARNING: No pinned certificates loaded - MITM attacks possible!")
+            NSLog("📝 Add certificates to bundle: api-nintendoemulator-app.cer")
+            NSLog("🔧 Generate with: openssl s_client -connect api.nintendoemulator.app:443 -showcerts")
+        } else {
+            NSLog("✅ Certificate pinning enabled with \(pinnedCertificates.count) certificate(s)")
+        }
+    }
+
+    // MARK: - Certificate Pinning
+
+    public func urlSession(
+        _ session: URLSession,
+        didReceive challenge: URLAuthenticationChallenge,
+        completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void
+    ) {
+        // Only handle server trust challenges
+        guard challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust,
+              let serverTrust = challenge.protectionSpace.serverTrust else {
+            completionHandler(.cancelAuthenticationChallenge, nil)
+            return
+        }
+
+        // Skip pinning if no certificates are loaded (development mode)
+        if pinnedCertificates.isEmpty {
+            NSLog("⚠️ Skipping certificate pinning validation (no certificates loaded)")
+            completionHandler(.useCredential, URLCredential(trust: serverTrust))
+            return
+        }
+
+        // Get server certificate (modern API for macOS 12+)
+        guard let certificateChain = SecTrustCopyCertificateChain(serverTrust) as? [SecCertificate],
+              let serverCertificate = certificateChain.first else {
+            NSLog("❌ Certificate pinning failed: Unable to get server certificate")
+            completionHandler(.cancelAuthenticationChallenge, nil)
+            return
+        }
+
+        let serverCertificateData = SecCertificateCopyData(serverCertificate) as Data
+
+        // Check if server certificate matches any pinned certificate
+        if pinnedCertificates.contains(serverCertificateData) {
+            NSLog("✅ Certificate pinning validation passed")
+            completionHandler(.useCredential, URLCredential(trust: serverTrust))
+        } else {
+            NSLog("❌ Certificate pinning validation FAILED!")
+            NSLog("⚠️ Server certificate does not match any pinned certificate")
+            NSLog("🔒 Rejecting connection to prevent MITM attack")
+            completionHandler(.cancelAuthenticationChallenge, nil)
+        }
+    }
+
+    // MARK: - Certificate Loading
+
+    private static func loadCertificate(named name: String) -> Data? {
+        guard let certPath = Bundle.main.path(forResource: name, ofType: "cer") else {
+            NSLog("⚠️ Certificate not found in bundle: \(name).cer")
+            return nil
+        }
+
+        do {
+            let certData = try Data(contentsOf: URL(fileURLWithPath: certPath))
+            NSLog("✅ Loaded certificate: \(name).cer (\(certData.count) bytes)")
+            return certData
+        } catch {
+            NSLog("❌ Failed to load certificate \(name).cer: \(error)")
+            return nil
+        }
     }
 
     // MARK: - Authentication Requests

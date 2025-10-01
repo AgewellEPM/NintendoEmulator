@@ -4,7 +4,7 @@ import EmulatorKit
 
 class YouTubeAPIManager: ObservableObject {
     private let clientId = SocialAPIConfig.YouTube.clientId
-    private let clientSecret = SocialAPIConfig.YouTube.clientSecret
+    // ⚠️ REMOVED: Client secrets must be handled by backend OAuth proxy
     private let redirectURI = SocialAPIConfig.YouTube.redirectURI
     private let baseURL = "https://www.googleapis.com/youtube/v3"
 
@@ -40,19 +40,22 @@ class YouTubeAPIManager: ObservableObject {
     }
 
     private func exchangeCodeForToken(code: String) async {
+        // 🔒 SECURITY: Token exchange must go through backend OAuth proxy
+        print("⚠️ WARNING: YouTube OAuth requires backend proxy - see SECURITY_ASSESSMENT_REPORT.md")
+
         let tokenURL = "https://oauth2.googleapis.com/token"
 
         var request = URLRequest(url: URL(string: tokenURL)!)
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
+        // ⚠️ This will fail without client secret - backend proxy required
         let bodyString = "client_id=\(clientId)&" +
-            "client_secret=\(clientSecret)&" +
             "code=\(code)&" +
             "grant_type=authorization_code&" +
             "redirect_uri=\(redirectURI)"
 
-        request.httpBody = bodyString.data(using: .utf8)
+        request.httpBody = bodyString.data(using: String.Encoding.utf8)
 
         do {
             let (data, _) = try await URLSession.shared.data(for: request)

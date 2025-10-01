@@ -53,14 +53,14 @@ public struct GameDetailsView: View {
                     }
                 }
                 .background(
-                    // Background image with blur effect
+                    // Background image with stronger blur effect
                     Group {
                         if let boxArt = metadata?.boxArtImage {
                             Image(nsImage: boxArt)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .blur(radius: 20)
-                            .opacity(0.1)
+                            .blur(radius: 50)
+                            .opacity(0.25)
                     } else {
                         LinearGradient(
                             colors: [.blue.opacity(0.3), .purple.opacity(0.3)],
@@ -99,7 +99,7 @@ public struct GameDetailsView: View {
     private var heroSection: some View {
         VStack(spacing: DesignSystem.Spacing.xl) {
             HStack(spacing: DesignSystem.Spacing.section) {
-                // Large cover art
+                // Large cover art - show metadata image or placeholder
                 if let boxArt = metadata?.boxArtImage {
                     Image(nsImage: boxArt)
                         .resizable()
@@ -192,7 +192,7 @@ public struct GameDetailsView: View {
             .padding(.top, 40)
             .padding(.bottom, 20)
 
-            // Big Play Button at bottom
+            // Action buttons row
             Button(action: {
                 NotificationCenter.default.post(name: .emulatorOpenROM, object: game.path)
             }) {
@@ -220,7 +220,6 @@ public struct GameDetailsView: View {
             .padding(.horizontal, 40)
             .padding(.bottom, 20)
         }
-        .frame(height: 400)
     }
 
     private var tabNavigation: some View {
@@ -341,12 +340,16 @@ public struct GameDetailsView: View {
     }
 
     private func loadGameData() async {
-        metadata = fetcher.getCachedMetadata(for: game.title)
+        print("🎮 Loading metadata for: \(game.title)")
 
-        if metadata == nil {
-            if let fetchedMetadata = await fetcher.fetchGameMetadata(for: game) {
-                metadata = fetchedMetadata
-            }
+        // Always try to fetch fresh metadata to get box art
+        if let fetchedMetadata = await fetcher.fetchGameMetadata(for: game) {
+            metadata = fetchedMetadata
+            print("✅ Fetched metadata with box art: \(fetchedMetadata.boxArtData != nil)")
+        } else {
+            // Fallback to cached if fetch fails
+            metadata = fetcher.getCachedMetadata(for: game.title)
+            print("⚠️ Using cached metadata")
         }
 
         // Initialize chat with game context
@@ -648,7 +651,6 @@ struct ChatTab: View {
                     }
                     .padding()
                 }
-                .frame(height: 400)
                 .background(
                     theme.chatTransparency >= 1.0 ?
                     AnyView(Color.clear) :

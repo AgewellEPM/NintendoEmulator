@@ -41,22 +41,42 @@ class TwitchAPIManager: ObservableObject {
     }
 
     private func exchangeCodeForToken(code: String) async {
+        // 🔒 SECURITY: Token exchange must go through backend OAuth proxy
+        // Client secrets should NEVER be in the app code
+
+        // TODO: Replace this with backend proxy endpoint
+        // Example: POST https://api.nintendoemulator.app/v1/oauth/twitch/exchange
+
+        print("⚠️ WARNING: Direct token exchange requires backend OAuth proxy")
+        print("🔒 Client secrets must not be stored in the app")
+        print("📝 See SECURITY_ASSESSMENT_REPORT.md Section 1.1 for implementation details")
+
+        // Temporary fallback: attempt exchange without client secret (will fail)
+        // This serves as a reminder that backend proxy is required
         let tokenURL = "https://id.twitch.tv/oauth2/token"
 
         var request = URLRequest(url: URL(string: tokenURL)!)
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
+        // ⚠️ This will fail without client secret - backend proxy required
         let bodyString = "client_id=\(clientId)&" +
-            "client_secret=\(SocialAPIConfig.Twitch.clientSecret)&" +
             "code=\(code)&" +
             "grant_type=authorization_code&" +
             "redirect_uri=\(redirectURI)"
 
-        request.httpBody = bodyString.data(using: .utf8)
+        request.httpBody = bodyString.data(using: String.Encoding.utf8)
 
         do {
-            let (data, _) = try await URLSession.shared.data(for: request)
+            let (data, response) = try await URLSession.shared.data(for: request)
+
+            // Check if request failed (expected without backend proxy)
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode != 200 {
+                print("❌ Token exchange failed (expected - backend proxy required)")
+                print("📖 Status code: \(httpResponse.statusCode)")
+                return
+            }
+
             let tokenResponse = try JSONDecoder().decode(TwitchTokenResponse.self, from: data)
 
             // Store token securely
@@ -71,6 +91,7 @@ class TwitchAPIManager: ObservableObject {
 
         } catch {
             print("Twitch token exchange error: \(error)")
+            print("💡 This is expected - implement backend OAuth proxy to fix")
         }
     }
 

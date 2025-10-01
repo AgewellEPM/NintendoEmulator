@@ -19,6 +19,8 @@ public struct ContentView: View {
     @State private var showingAuthSheet = false
     @State private var showingSocialWizard = false
     @State private var showingCustomization = false
+    @State private var showingAIAssistant = false
+    @State private var showingAIAgent = false
 
     public init() {}
 
@@ -77,6 +79,10 @@ public struct ContentView: View {
         .sheet(isPresented: $showingCustomization) {
             FullCustomizationView()
                 .frame(minWidth: 900, minHeight: 700)
+        }
+        .sheet(isPresented: $showingAIAssistant) {
+            AIAssistantPanel()
+                .frame(minWidth: 600, minHeight: 500)
         }
         .onReceive(NotificationCenter.default.publisher(for: .emulatorStart)) { _ in
             Task { try? await emulatorManager.start() }
@@ -215,6 +221,31 @@ public struct ContentView: View {
             Button(action: { showingSocialWizard = true }) {
                 Image(systemName: "person.2.circle.fill")
                     .font(.system(size: 16))
+            }
+            .buttonStyle(.plain)
+            .padding(.horizontal, 8)
+
+            // AI Assistant button
+            Button(action: {
+                showingAIAssistant = true
+            }) {
+                HStack(spacing: 4) {
+                    Image(systemName: "brain.head.profile")
+                        .font(.system(size: 14))
+                    Text("AI")
+                        .font(.system(size: 12, weight: .semibold))
+                }
+                .foregroundColor(.white)
+                .padding(.horizontal, 10)
+                .padding(.vertical, 5)
+                .background(
+                    LinearGradient(
+                        colors: [.purple, .pink],
+                        startPoint: .leading,
+                        endPoint: .trailing
+                    )
+                )
+                .cornerRadius(12)
             }
             .buttonStyle(.plain)
             .padding(.horizontal, 8)
@@ -742,6 +773,164 @@ struct ToastView: View {
 }
 
 // No longer needed - simplified UI
+
+struct AIAssistantPanel: View {
+    @State private var operatorMode = false
+    @State private var isActive = false
+    @State private var showingAIAgent = false
+
+    var body: some View {
+        VStack(spacing: 0) {
+            // Header
+            HStack {
+                Image(systemName: "brain.head.profile")
+                    .font(.title)
+                    .foregroundColor(.purple)
+
+                VStack(alignment: .leading) {
+                    Text("AI Assistant")
+                        .font(.title2.bold())
+                    Text(operatorMode ? "Operator Mode: Watching Gameplay" : "General Assistant")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+
+                Spacer()
+            }
+            .padding()
+            .background(Color.purple.opacity(0.1))
+
+            Divider()
+
+            ScrollView {
+                VStack(spacing: 20) {
+                    // Operator Mode Section
+                    GroupBox {
+                        VStack(alignment: .leading, spacing: 12) {
+                            Toggle(isOn: $operatorMode) {
+                                HStack {
+                                    Image(systemName: "eye.circle.fill")
+                                        .foregroundColor(.purple)
+                                    Text("AI Operator Mode")
+                                        .font(.headline)
+                                }
+                            }
+
+                            Text("AI watches your streaming video and narrates helpful gameplay tips in real-time")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+
+                            if operatorMode {
+                                Button(action: { isActive.toggle() }) {
+                                    HStack {
+                                        Image(systemName: isActive ? "stop.circle.fill" : "play.circle.fill")
+                                        Text(isActive ? "Stop AI Narration" : "Start AI Narration")
+                                    }
+                                    .frame(maxWidth: .infinity)
+                                    .padding()
+                                    .background(
+                                        LinearGradient(
+                                            colors: isActive ? [.red, .orange] : [.purple, .pink],
+                                            startPoint: .leading,
+                                            endPoint: .trailing
+                                        )
+                                    )
+                                    .foregroundColor(.white)
+                                    .cornerRadius(10)
+                                }
+                                .buttonStyle(.plain)
+                            }
+                        }
+                    } label: {
+                        Label("Operator Mode", systemImage: "eye.fill")
+                    }
+
+                    // AI Agent Section
+                    GroupBox {
+                        VStack(alignment: .leading, spacing: 12) {
+                            HStack {
+                                Image(systemName: "brain.head.profile")
+                                    .foregroundColor(.blue)
+                                Text("AI Game Agent")
+                                    .font(.headline)
+                            }
+
+                            Text("AI learns to play games by watching you, then can play autonomously or mimic your style")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+
+                            Button(action: { showingAIAgent = true }) {
+                                HStack {
+                                    Image(systemName: "play.circle.fill")
+                                    Text("Open AI Agent Panel")
+                                }
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(
+                                    LinearGradient(
+                                        colors: [.blue, .purple],
+                                        startPoint: .leading,
+                                        endPoint: .trailing
+                                    )
+                                )
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    } label: {
+                        Label("AI Agent", systemImage: "brain.head.profile")
+                    }
+
+                    // General AI Section
+                    GroupBox {
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text("Ask AI anything about:")
+                                .font(.headline)
+
+                            VStack(alignment: .leading, spacing: 8) {
+                                Label("Game strategies and tips", systemImage: "gamecontroller.fill")
+                                Label("Level walkthroughs", systemImage: "map.fill")
+                                Label("Secret locations", systemImage: "lock.fill")
+                                Label("Speedrun techniques", systemImage: "timer")
+                            }
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                        }
+                    } label: {
+                        Label("AI Capabilities", systemImage: "sparkles")
+                    }
+
+                    // Status
+                    GroupBox {
+                        VStack(alignment: .leading, spacing: 8) {
+                            HStack {
+                                Circle()
+                                    .fill(isActive ? Color.green : Color.gray)
+                                    .frame(width: 8, height: 8)
+                                Text(isActive ? "AI is active" : "AI is idle")
+                                    .font(.caption)
+                            }
+
+                            if operatorMode && isActive {
+                                Text("🔴 Analyzing gameplay frames")
+                                    .font(.caption)
+                                    .foregroundColor(.red)
+                            }
+                        }
+                    } label: {
+                        Label("Status", systemImage: "info.circle")
+                    }
+                }
+                .padding()
+            }
+        }
+        .showSetupWizardIfNeeded()
+        .sheet(isPresented: $showingAIAgent) {
+            AIAgentControlPanel()
+        }
+    }
+}
 
 #if DEBUG
 struct ContentView_Previews: PreviewProvider {

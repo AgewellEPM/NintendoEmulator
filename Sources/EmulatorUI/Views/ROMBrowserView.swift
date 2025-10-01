@@ -642,7 +642,7 @@ struct ROMDetailsView: View {
     }
 }
 
-struct InfoRow: View {
+struct ROMInfoRow: View {
     let label: String
     let value: String
 

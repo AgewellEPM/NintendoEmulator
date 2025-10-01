@@ -44,31 +44,68 @@ public final class ROMManager: ObservableObject {
     }
 
     public func loadROMs() async {
-        isLoading = true
-        defer { isLoading = false }
+        await MainActor.run { isLoading = true }
 
-        do {
-            let urls = try FileManager.default.contentsOfDirectory(
-                at: romsDirectory,
-                includingPropertiesForKeys: [.fileSizeKey, .contentModificationDateKey],
-                options: [.skipsHiddenFiles]
-            )
+        // Just load filenames quickly - don't process ROMs until needed
+        let loadedROMs = await Task.detached {
+            do {
+                let urls = try FileManager.default.contentsOfDirectory(
+                    at: self.romsDirectory,
+                    includingPropertiesForKeys: [.fileSizeKey],
+                    options: [.skipsHiddenFiles]
+                )
 
-            var loadedROMs: [ROMMetadata] = []
+                var roms: [ROMMetadata] = []
 
-            for url in urls {
-                if supportedExtensions.contains(url.pathExtension.lowercased()) {
-                    if let rom = await processROM(at: url) {
-                        loadedROMs.append(rom)
+                for url in urls {
+                    let ext = url.pathExtension.lowercased()
+                    if self.supportedExtensions.contains(ext) {
+                        // Quick metadata only - no file reading
+                        let system = self.detectSystemFromExtension(ext)
+                        let title = url.deletingPathExtension().lastPathComponent
+
+                        let attrs = try? FileManager.default.attributesOfItem(atPath: url.path)
+                        let fileSize = (attrs?[.size] as? NSNumber)?.int64Value ?? 0
+
+                        let rom = ROMMetadata(
+                            path: url,
+                            system: system,
+                            title: title,
+                            region: nil,
+                            checksum: "",  // Calculate only when needed
+                            size: fileSize,
+                            header: nil
+                        )
+                        roms.append(rom)
                     }
                 }
+
+                return roms.sorted { $0.title < $1.title }
+            } catch {
+                self.logger.error("Failed to load ROMs: \(error)")
+                return []
             }
+        }.value
 
-            roms = loadedROMs.sorted { $0.title < $1.title }
-            logger.info("Loaded \(roms.count) ROMs")
+        // Update UI on main thread
+        await MainActor.run {
+            self.roms = loadedROMs
+            self.isLoading = false
+        }
+        logger.info("Loaded \(loadedROMs.count) ROM filenames")
+    }
 
-        } catch {
-            logger.error("Failed to load ROMs: \(error)")
+    nonisolated private func detectSystemFromExtension(_ ext: String) -> EmulatorSystem {
+        switch ext {
+        case "nes", "unf", "fds": return .nes
+        case "sfc", "smc", "swc", "fig": return .snes
+        case "n64", "z64", "v64", "rom": return .n64
+        case "gcm", "iso", "gcz", "dol": return .gamecube
+        case "wbfs", "wad": return .wii
+        case "nds", "dsi", "ids", "srl": return .ds
+        case "3ds", "cci", "cxi", "cia": return .threeds
+        case "nsp", "xci", "nca", "nro": return .switchConsole
+        default: return .n64
         }
     }
 
@@ -76,6 +113,7 @@ public final class ROMManager: ObservableObject {
         isLoading = true
         defer { isLoading = false }
 
+        let maxFileSize: Int64 = 128 * 1024 * 1024 // 128MB safety limit
         var newROMs: [ROMMetadata] = []
 
         for url in urls {
@@ -85,30 +123,131 @@ public final class ROMManager: ObservableObject {
             }
             defer { url.stopAccessingSecurityScopedResource() }
 
-            // Copy ROM to our directory
-            let filename = url.lastPathComponent
-            let destinationURL = romsDirectory.appendingPathComponent(filename)
-
             do {
-                // Remove existing file if it exists
+                // 1. Validate file size
+                let attrs = try FileManager.default.attributesOfItem(atPath: url.path)
+                let fileSize = (attrs[.size] as? NSNumber)?.int64Value ?? 0
+
+                guard fileSize > 0 else {
+                    logger.error("ROM file is empty: \(url.lastPathComponent)")
+                    continue
+                }
+
+                guard fileSize <= maxFileSize else {
+                    logger.error("ROM file too large (\(fileSize) bytes > \(maxFileSize)): \(url.lastPathComponent)")
+                    continue
+                }
+
+                // 2. Validate file extension
+                let ext = url.pathExtension.lowercased()
+                guard supportedExtensions.contains(ext) else {
+                    logger.error("Unsupported file extension: .\(ext)")
+                    continue
+                }
+
+                // 3. Read header and validate magic numbers
+                let handle = try FileHandle(forReadingFrom: url)
+                defer { try? handle.close() }
+
+                guard let header = try handle.read(upToCount: 16) else {
+                    logger.error("Failed to read ROM header: \(url.lastPathComponent)")
+                    continue
+                }
+
+                guard validateROMHeader(header, extension: ext) else {
+                    logger.error("Invalid ROM header/magic number: \(url.lastPathComponent)")
+                    continue
+                }
+
+                // 4. Sanitize filename (prevent path traversal)
+                let sanitizedFilename = sanitizeFilename(url.lastPathComponent)
+                let destinationURL = romsDirectory.appendingPathComponent(sanitizedFilename)
+
+                // 5. Verify destination is within romsDirectory (path traversal check)
+                let canonicalDestination = destinationURL.standardized.path
+                let canonicalROMs = romsDirectory.standardized.path
+
+                guard canonicalDestination.hasPrefix(canonicalROMs) else {
+                    logger.error("Path traversal attempt detected: \(sanitizedFilename)")
+                    continue
+                }
+
+                // 6. Remove existing file if it exists
                 if FileManager.default.fileExists(atPath: destinationURL.path) {
                     try FileManager.default.removeItem(at: destinationURL)
                 }
 
+                // 7. Now safe to copy
                 try FileManager.default.copyItem(at: url, to: destinationURL)
+                logger.info("ROM copied securely: \(sanitizedFilename)")
 
+                // 8. Process and validate
                 if let rom = await processROM(at: destinationURL) {
                     newROMs.append(rom)
                     logger.info("Added ROM: \(rom.title)")
+                } else {
+                    // Invalid ROM after processing, delete it
+                    try? FileManager.default.removeItem(at: destinationURL)
+                    logger.error("ROM validation failed, removed: \(sanitizedFilename)")
                 }
             } catch {
-                logger.error("Failed to copy ROM \(filename): \(error)")
+                logger.error("Failed to add ROM \(url.lastPathComponent): \(error)")
             }
         }
 
         // Add new ROMs to the list
         roms.append(contentsOf: newROMs)
         roms.sort { $0.title < $1.title }
+    }
+
+    /// Sanitize filename to prevent path traversal attacks
+    private func sanitizeFilename(_ filename: String) -> String {
+        return filename
+            .replacingOccurrences(of: "..", with: "")
+            .replacingOccurrences(of: "/", with: "_")
+            .replacingOccurrences(of: "\\", with: "_")
+            .replacingOccurrences(of: "\0", with: "")
+            .replacingOccurrences(of: "~", with: "")
+    }
+
+    /// Validate ROM header magic numbers
+    private func validateROMHeader(_ header: Data, extension ext: String) -> Bool {
+        guard !header.isEmpty else { return false }
+
+        switch ext {
+        case "nes":
+            // iNES header: "NES\x1A"
+            return header.starts(with: [0x4E, 0x45, 0x53, 0x1A])
+
+        case "n64", "z64", "v64":
+            // N64 magic numbers (various byte orders)
+            let possibleMagics: [[UInt8]] = [
+                [0x80, 0x37, 0x12, 0x40],  // Big endian
+                [0x37, 0x80, 0x40, 0x12],  // Little endian
+                [0x40, 0x12, 0x37, 0x80]   // Byte swapped
+            ]
+            let headerBytes = Array(header.prefix(4))
+            return possibleMagics.contains(headerBytes)
+
+        case "sfc", "smc":
+            // SNES ROMs don't have consistent magic numbers
+            // Validate by size patterns instead
+            return true  // Further validation in processROM
+
+        case "gcm", "iso":
+            // GameCube/Wii disc magic
+            if header.count >= 4 {
+                let magic = Array(header.prefix(4))
+                return magic == [0xC2, 0x33, 0x9F, 0x3D] || // GameCube
+                       magic == [0x5D, 0x1C, 0x9E, 0xA3]    // Wii
+            }
+            return false
+
+        default:
+            // Other formats: allow but log warning
+            logger.warning("No magic number validation for extension: .\(ext)")
+            return true
+        }
     }
 
     public func deleteROM(_ rom: ROMMetadata) async {

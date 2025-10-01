@@ -132,6 +132,28 @@ public final class ControllerManager: ObservableObject {
         inputDelegates[player] = delegate
     }
 
+    // MARK: - AI Virtual Input Injection
+
+    /// Inject virtual button input (for AI agents)
+    public func injectVirtualInput(player: Int, button: EmulatorButton, pressed: Bool) {
+        inputDelegates[player]??.setButtonState(player: player, button: button, pressed: pressed)
+    }
+
+    /// Inject virtual analog stick input (for AI agents)
+    public func injectVirtualAnalog(player: Int, stick: AnalogStick, x: Float, y: Float) {
+        inputDelegates[player]??.setAnalogState(player: player, stick: stick, x: x, y: y)
+    }
+
+    /// Inject virtual trigger input (for AI agents)
+    public func injectVirtualTrigger(player: Int, trigger: Trigger, value: Float) {
+        inputDelegates[player]??.setTriggerState(player: player, trigger: trigger, value: value)
+    }
+
+    /// Get current input delegate for a player (for AI to connect)
+    public func getInputDelegate(for player: Int) -> EmulatorInputProtocol? {
+        return inputDelegates[player]!
+    }
+
     /// Configure controller for a specific player
     public func assignController(_ controller: GCController, to player: Int) {
         guard player >= 0 && player < 4 else { return }

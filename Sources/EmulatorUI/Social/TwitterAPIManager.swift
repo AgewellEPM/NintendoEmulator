@@ -4,7 +4,7 @@ import EmulatorKit
 
 class TwitterAPIManager: ObservableObject {
     private let clientId = SocialAPIConfig.Twitter.clientId
-    private let clientSecret = SocialAPIConfig.Twitter.clientSecret
+    // ⚠️ REMOVED: Client secrets must be handled by backend OAuth proxy
     private let redirectURI = SocialAPIConfig.Twitter.redirectURI
     private let baseURL = "https://api.twitter.com/2"
 
